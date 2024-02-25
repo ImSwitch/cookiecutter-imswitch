@@ -8,22 +8,11 @@ __version__ = "0.0.1"
 {% endif -%}
 
 {% if cookiecutter.include_controller == 'y' %}
-from ._controller import imswitch_get_controller
+from .{{cookiecutter.module_name}}_controller import *
 {% endif %}{% if cookiecutter.include_widget_plugin == 'y' -%}
-from ._widget import ExampleQWidget, ImageThreshold, threshold_autogenerate_widget, threshold_magic_widget
+from .{{cookiecutter.module_name}}_widget import *
 {% endif %}{% if cookiecutter.include_manager_plugin == 'y' -%}
-from ._manager import write_multiple, write_single_image
+from .{{cookiecutter.module_name}}_manager import *
 {% endif %}
 __all__ = (
-    {% if cookiecutter.include_controller == 'y' -%}
-    "imswitch_get_controller",
-    {% endif %}{% if cookiecutter.include_manager_plugin == 'y' -%}
-    "write_single_image",
-    "write_multiple",
-    {% endif %}{% if cookiecutter.include_widget_plugin == 'y' -%}
-    "ExampleQWidget",
-    "ImageThreshold",
-    "threshold_autogenerate_widget",
-    "threshold_magic_widget",
-{% endif -%}
 )
