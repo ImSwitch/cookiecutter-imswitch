@@ -12,9 +12,6 @@ contributions:
     - id: {{cookiecutter.plugin_name}}.write_multiple
       python_name: {{cookiecutter.module_name}}._manager:write_multiple
       title: Save multi-layer data with {{cookiecutter.display_name}}
-    - id: {{cookiecutter.plugin_name}}.write_single_image
-      python_name: {{cookiecutter.module_name}}._manager:write_single_image
-      title: Save image data with {{cookiecutter.display_name}}{% endif %}{% if cookiecutter.include_sample_data_plugin == 'y' %}
     - id: {{cookiecutter.plugin_name}}.make_sample_data
       python_name: {{cookiecutter.module_name}}._sample_data:make_sample_data
       title: Load sample data from {{cookiecutter.display_name}}{% endif %}{% if cookiecutter.include_widget_plugin == 'y' %}
@@ -40,10 +37,6 @@ contributions:
       filename_extensions: []
     - command: {{cookiecutter.plugin_name}}.write_single_image
       layer_types: ['image']
-      filename_extensions: ['.npy']{% endif %}{% if cookiecutter.include_sample_data_plugin == 'y' %}
-  sample_data:
-    - command: {{cookiecutter.plugin_name}}.make_sample_data
-      display_name: {{cookiecutter.display_name}}
       key: unique_id.1{% endif %}{% if cookiecutter.include_widget_plugin == 'y' %}
   widgets:
     - command: {{cookiecutter.plugin_name}}.make_container_widget

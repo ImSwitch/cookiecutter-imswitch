@@ -21,15 +21,13 @@ def run_tox(plugin):
 
 @pytest.mark.parametrize("include_controller", ["y", "n"])
 @pytest.mark.parametrize("include_manager_plugin", ["y", "n"])
-@pytest.mark.parametrize("include_sample_data_plugin", ["y", "n"])
 @pytest.mark.parametrize("include_widget_plugin", ["y", "n"])
-def test_run_cookiecutter_and_plugin_tests(cookies, capsys, include_controller, include_manager_plugin, include_sample_data_plugin, include_widget_plugin):
+def test_run_cookiecutter_and_plugin_tests(cookies, capsys, include_controller, include_manager_plugin, include_widget_plugin):
     """Create a new plugin via cookiecutter and run its tests."""
     result = cookies.bake(extra_context={
             "plugin_name": "foo-bar",
             "include_controller": include_controller,
             "include_manager_plugin": include_manager_plugin,
-            "include_sample_data_plugin": include_sample_data_plugin,
             "include_widget_plugin": include_widget_plugin,
         }
     )
@@ -46,13 +44,11 @@ def test_run_cookiecutter_and_plugin_tests(cookies, capsys, include_controller, 
         assert (test_path / "test_controller.py").is_file()
     if include_manager_plugin == "y":
         assert (test_path / "test_manager.py").is_file()
-    if include_sample_data_plugin == "y":
-        assert (test_path / "test_sample_data.py").is_file()
     if include_widget_plugin == "y":
         assert (test_path / "test_widget.py").is_file()
 
     # if all are `n` there are no modules or tests    
-    if "y" in {include_controller, include_manager_plugin, include_sample_data_plugin, include_widget_plugin}:
+    if "y" in {include_controller, include_manager_plugin, include_widget_plugin}:
         run_tox(str(result.project_path))
 
 
@@ -99,15 +95,13 @@ def test_run_cookiecutter_select_plugins(cookies, capsys):
 
 @pytest.mark.parametrize("include_controller", ["y", "n"])
 @pytest.mark.parametrize("include_manager_plugin", ["y", "n"])
-@pytest.mark.parametrize("include_sample_data_plugin", ["y", "n"])
 @pytest.mark.parametrize("include_widget_plugin", ["y", "n"])
-def test_pre_commit_validity(cookies, include_controller, include_manager_plugin, include_sample_data_plugin, include_widget_plugin):
+def test_pre_commit_validity(cookies, include_controller, include_manager_plugin, include_widget_plugin):
     result = cookies.bake(
         extra_context={
             "plugin_name": "anything",
             "include_controller": include_controller,
             "include_manager_plugin": include_manager_plugin,
-            "include_sample_data_plugin": include_sample_data_plugin,
             "include_widget_plugin": include_widget_plugin,
             "install_precommit": "y",
         }
