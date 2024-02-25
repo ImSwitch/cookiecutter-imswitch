@@ -1,13 +1,13 @@
 name: {{cookiecutter.plugin_name}}
 display_name: {{cookiecutter.display_name}}
-# use 'hidden' to remove plugin from napari hub search results
+# use 'hidden' to remove plugin from imswitch hub search results
 visibility: public
-# see https://napari.org/stable/plugins/manifest.html for valid categories
+# see https://imswitch.org/stable/plugins/manifest.html for valid categories
 categories: ["Annotation", "Segmentation", "Acquisition"]
 contributions:
   commands:{% if cookiecutter.include_controller == 'y' %}
     - id: {{cookiecutter.plugin_name}}.get_controller
-      python_name: {{cookiecutter.module_name}}._controller:napari_get_controller
+      python_name: {{cookiecutter.module_name}}._controller:imswitch_get_controller
       title: Open data with {{cookiecutter.display_name}}{% endif %}{% if cookiecutter.include_manager_plugin == 'y' %}
     - id: {{cookiecutter.plugin_name}}.write_multiple
       python_name: {{cookiecutter.module_name}}._manager:write_multiple
@@ -27,11 +27,11 @@ contributions:
     - id: {{cookiecutter.plugin_name}}.make_qwidget
       python_name: {{cookiecutter.module_name}}:ExampleQWidget
       title: Make example QWidget{% endif %}{% if cookiecutter.include_controller == 'y' %}
-  readers:
+  controllers:
     - command: {{cookiecutter.plugin_name}}.get_controller
       accepts_directories: false
       filename_patterns: ['*.npy']{% endif %}{% if cookiecutter.include_manager_plugin == 'y' %}
-  writers:
+  managers:
     - command: {{cookiecutter.plugin_name}}.write_multiple
       layer_types: ['image*','labels*']
       filename_extensions: []

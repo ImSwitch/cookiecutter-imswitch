@@ -1,6 +1,6 @@
 import numpy as np
 
-from {{cookiecutter.module_name}} import napari_get_controller
+from {{cookiecutter.module_name}} import imswitch_get_controller
 
 
 # tmp_path is a pytest fixture
@@ -13,7 +13,7 @@ def test_controller(tmp_path):
     np.save(my_test_file, original_data)
 
     # try to read it back in
-    reader = napari_get_controller(my_test_file)
+    reader = imswitch_get_controller(my_test_file)
     assert callable(reader)
 
     # make sure we're delivering the right format
@@ -27,5 +27,5 @@ def test_controller(tmp_path):
 
 
 def test_get_controller_pass():
-    reader = napari_get_controller("fake.file")
+    reader = imswitch_get_controller("fake.file")
     assert reader is None

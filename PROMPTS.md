@@ -142,8 +142,7 @@ for that license being listed in your `setup.cfg` under the `license` field.
 License options include: [BSD-3], [MIT], [MPL v2.0], [Apache v2.0], [GNU GPL v3.0], or [GNU LGPL v3.0]
 
 [spec]: https://ImSwitch.org/stable/plugins/manifest.html
-[reader-spec]: https://ImSwitch.org/stable/plugins/contributions.html#contributions-readers
-[writer-spec]: https://ImSwitch.org/stable/plugins/contributions.html#contributions-writers
+[reader-spec]: https://ImSwitch.org/stable/plugins/
 [theme-spec]: https://ImSwitch.org/stable/plugins/contributions.html#contributions-themes
 [widget-spec]: https://ImSwitch.org/stable/plugins/contributions.html#contributions-widgets
 [sample-data-spec]: https://ImSwitch.org/stable/plugins/contributions.html#contributions-sample-data

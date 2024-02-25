@@ -43,7 +43,7 @@ def validate_manifest():
         print("npe2 is not installed. Skipping manifest validation.")
         return True
 
-    path=Path(PROJECT_DIRECTORY) / "src" / "{{cookiecutter.module_name}}" / "napari.yaml"
+    path=Path(PROJECT_DIRECTORY) / "src" / "{{cookiecutter.module_name}}" / "imswitch.yaml"
 
     valid = False
     try:
@@ -137,7 +137,7 @@ Your plugin template is ready!  Next steps:
     Source Code = https://github.com/{{cookiecutter.github_username_or_organization}}/{{cookiecutter.plugin_name}}
     User Support = https://github.com/{{cookiecutter.github_username_or_organization}}/{{cookiecutter.plugin_name}}/issues
 
-    These URLs will be displayed on your plugin's napari hub page.
+    These URLs will be displayed on your plugin's imswitch hub page.
     You may wish to change these before publishing your plugin!"""
 
 {% else %}
@@ -166,13 +166,13 @@ Your plugin template is ready!  Next steps:
         User Support = https://github.com/your-repo-username/your-repo-name/issues"""
 {% endif %}
     msg += """
-5. Read the README for more info: https://github.com/napari/cookiecutter-napari-plugin
+5. Read the README for more info: https://github.com/imswitch/cookiecutter-imswitch-plugin
 
-6. We've provided a template description for your plugin page on the napari hub at `.napari-hub/DESCRIPTION.md`.
+6. We've provided a template description for your plugin page on the imswitch hub at `.imswitch-hub/DESCRIPTION.md`.
    You'll likely want to edit this before you publish your plugin.
 
-7. Consider customizing the rest of your plugin metadata for display on the napari hub:
-   https://github.com/chanzuckerberg/napari-hub/blob/main/docs/customizing-plugin-listing.md
+7. Consider customizing the rest of your plugin metadata for display on the imswitch hub:
+   https://github.com/chanzuckerberg/imswitch-hub/blob/main/docs/customizing-plugin-listing.md
 """
 
     print(msg)
