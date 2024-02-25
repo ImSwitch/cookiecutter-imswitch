@@ -59,7 +59,24 @@ def validate_manifest():
     return valid
 
 
+# rename the _widgetpy to be {{cookiecutter.module_name}}_widget.py
+def rename_widget_file():
+    pass
+    srcPath = Path(PROJECT_DIRECTORY) / "src" / "{{cookiecutter.module_name}}" / "_widget.py"
+    dstPath = Path(PROJECT_DIRECTORY) / "src" / "{{cookiecutter.module_name}}" / "{{cookiecutter.module_name}}" "_widget.py"
+    logger.info("Renaming {srcPath} to {dstPath}")
+    print("test")
+    if "{{cookiecutter.include_widget_plugin}}" == "y":
+        logger.info("Renaming _widget.py to {{cookiecutter.module_name}}_widget.py")
+        import shutil
+        shutil.move(
+            srcPath,
+            dstPath,
+        )
+
 if __name__ == "__main__":
+    #rename_widget_file()
+    
     remove_temp_folders(ALL_TEMP_FOLDERS)
     remove_unrequested_plugin_examples()
     valid=validate_manifest()

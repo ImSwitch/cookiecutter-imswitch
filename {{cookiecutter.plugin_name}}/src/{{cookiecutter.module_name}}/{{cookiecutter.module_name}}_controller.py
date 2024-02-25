@@ -6,10 +6,6 @@ import numpy as np
 from typing import Any, Dict, List, Optional, Tuple
 
 
-rightDockInfos = {
-            'Autofocus': _DockInfo(name='Autofocus', yPosition=0),
-}
-
 
 class dotdict(dict):
     """dot.notation access to dictionary attributes"""
@@ -18,7 +14,7 @@ class dotdict(dict):
     __delattr__ = dict.__delitem__
 
 
-class widgetplugincontroller(ImConWidgetController):
+class {{cookiecutter.module_name}}_controller(ImConWidgetController):
     """Linked to CameraPluginWidget."""
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

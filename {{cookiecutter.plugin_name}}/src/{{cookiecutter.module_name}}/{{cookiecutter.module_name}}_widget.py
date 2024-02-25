@@ -8,7 +8,7 @@ class dotdict(dict):
     __setattr__ = dict.__setitem__
     __delattr__ = dict.__delitem__
 
-class widgetpluginwidget(Widget):
+class {{cookiecutter.module_name}}_widget(Widget):
     """Linked to CameraPluginWidget."""
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
