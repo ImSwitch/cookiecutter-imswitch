@@ -1,10 +1,10 @@
 import numpy as np
 
-from {{cookiecutter.module_name}} import napari_get_reader
+from {{cookiecutter.module_name}} import napari_get_controller
 
 
 # tmp_path is a pytest fixture
-def test_reader(tmp_path):
+def test_controller(tmp_path):
     """An example of how you might test your plugin."""
 
     # write some fake data using your supported file format
@@ -13,7 +13,7 @@ def test_reader(tmp_path):
     np.save(my_test_file, original_data)
 
     # try to read it back in
-    reader = napari_get_reader(my_test_file)
+    reader = napari_get_controller(my_test_file)
     assert callable(reader)
 
     # make sure we're delivering the right format
@@ -26,6 +26,6 @@ def test_reader(tmp_path):
     np.testing.assert_allclose(original_data, layer_data_tuple[0])
 
 
-def test_get_reader_pass():
-    reader = napari_get_reader("fake.file")
+def test_get_controller_pass():
+    reader = napari_get_controller("fake.file")
     assert reader is None

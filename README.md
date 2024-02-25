@@ -35,8 +35,8 @@ module_name [growth_cone_finder]: napari_growth_cone_finder
 display_name [napari FooBar]: Growth Cone Finder
 short_description [A simple plugin to use with napari]:
 # you can select from various plugin template examples
-include_reader_plugin [y]:
-include_writer_plugin [y]:
+include_controller [y]:
+include_manager_plugin [y]:
 include_sample_data_plugin [y]:
 include_dock_widget_plugin [y]:
 use_git_tags_for_versioning [n]:
@@ -67,12 +67,12 @@ napari-growth-cone-finder/
 ├── napari_growth_cone_finder
 │   ├── __init__.py
 │   ├── _widget.py
-│   ├── _reader.py
+│   ├── _controller.py
 │   ├── napari.yaml
 │   └── _tests
 │       ├── __init__.py
 │       ├── test_widget.py
-│       └── test_reader.py
+│       └── test_controller.py
 ├── pyproject.toml
 ├── README.md
 ├── setup.cfg

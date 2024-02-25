@@ -5,15 +5,15 @@ visibility: public
 # see https://napari.org/stable/plugins/manifest.html for valid categories
 categories: ["Annotation", "Segmentation", "Acquisition"]
 contributions:
-  commands:{% if cookiecutter.include_reader_plugin == 'y' %}
-    - id: {{cookiecutter.plugin_name}}.get_reader
-      python_name: {{cookiecutter.module_name}}._reader:napari_get_reader
-      title: Open data with {{cookiecutter.display_name}}{% endif %}{% if cookiecutter.include_writer_plugin == 'y' %}
+  commands:{% if cookiecutter.include_controller == 'y' %}
+    - id: {{cookiecutter.plugin_name}}.get_controller
+      python_name: {{cookiecutter.module_name}}._controller:napari_get_controller
+      title: Open data with {{cookiecutter.display_name}}{% endif %}{% if cookiecutter.include_manager_plugin == 'y' %}
     - id: {{cookiecutter.plugin_name}}.write_multiple
-      python_name: {{cookiecutter.module_name}}._writer:write_multiple
+      python_name: {{cookiecutter.module_name}}._manager:write_multiple
       title: Save multi-layer data with {{cookiecutter.display_name}}
     - id: {{cookiecutter.plugin_name}}.write_single_image
-      python_name: {{cookiecutter.module_name}}._writer:write_single_image
+      python_name: {{cookiecutter.module_name}}._manager:write_single_image
       title: Save image data with {{cookiecutter.display_name}}{% endif %}{% if cookiecutter.include_sample_data_plugin == 'y' %}
     - id: {{cookiecutter.plugin_name}}.make_sample_data
       python_name: {{cookiecutter.module_name}}._sample_data:make_sample_data
@@ -29,11 +29,11 @@ contributions:
       title: Make threshold function widget
     - id: {{cookiecutter.plugin_name}}.make_qwidget
       python_name: {{cookiecutter.module_name}}:ExampleQWidget
-      title: Make example QWidget{% endif %}{% if cookiecutter.include_reader_plugin == 'y' %}
+      title: Make example QWidget{% endif %}{% if cookiecutter.include_controller == 'y' %}
   readers:
-    - command: {{cookiecutter.plugin_name}}.get_reader
+    - command: {{cookiecutter.plugin_name}}.get_controller
       accepts_directories: false
-      filename_patterns: ['*.npy']{% endif %}{% if cookiecutter.include_writer_plugin == 'y' %}
+      filename_patterns: ['*.npy']{% endif %}{% if cookiecutter.include_manager_plugin == 'y' %}
   writers:
     - command: {{cookiecutter.plugin_name}}.write_multiple
       layer_types: ['image*','labels*']
