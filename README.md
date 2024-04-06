@@ -8,52 +8,86 @@
 
 ### Create your plugin package
 
-Install [Cookiecutter] and generate a new napari plugin project:
+Install [Cookiecutter] and generate a new imswitch plugin project:
 
 ```bash
 pip install cookiecutter
-cookiecutter https://github.com/napari/cookiecutter-napari-plugin
+cookiecutter https://github.com/openUC2/cookiecutter-imswitch/
 ```
 
 Cookiecutter prompts you for information regarding your plugin
 (A new folder will be created in your current working directory):
 
 ```bash
-full_name [Napari Developer]: Ramon y Cajal
-email [yourname@example.com]: ramon@cajal.es
-github_username_or_organization [githubuser]: neuronz52
-# NOTE: for packages whose primary purpose is to be a napari plugin, we
-# recommend using the 'napari-' prefix in the package name.
-# If your package provides functionality outside of napari, you may
-# choose to leave napari out of the name.
-plugin_name [napari-foobar]: napari-growth-cone-finder
-Select github_repository_url:
-1 - https://github.com/neuronz52/napari-growth-cone-finder
-2 - provide later
-Choose from 1, 2 [1]:
-module_name [growth_cone_finder]: napari_growth_cone_finder
-display_name [napari FooBar]: Growth Cone Finder
-short_description [A simple plugin to use with napari]:
-# you can select from various plugin template examples
-include_controller [y]:
-include_manager_plugin [y]:
-include_info_plugin [y]:
-include_sample_data_plugin [y]:
-include_dock_widget_plugin [y]:
-use_git_tags_for_versioning [n]:
-Select license:
-1 - BSD-3
-2 - MIT
-3 - Mozilla Public License 2.0
-4 - Apache Software License 2.0
-5 - GNU LGPL v3.0
-6 - GNU GPL v3.0
-Choose from 1, 2, 3, 4, 5, 6 (1, 2, 3, 4, 5, 6) [1]:
-
+(imswitch) (base) MacBook-Pro-43:imswitch-sim bene$ cookiecutter https://github.com/openUC2/cookiecutter-imswitch/
+You've downloaded /Users/bene/.cookiecutters/cookiecutter-imswitch before. Is it okay to delete and re-download
+it? [y/n] (y): y
+  [1/14] full_name (ImSwitch Developer): Benedict Diederich
+  [2/14] email (yourname@example.com): benedict.diederich@leibniz-ipht.de
+  [3/14] github_username_or_organization (githubuser): openuc2
+  [4/14] plugin_name (imswitch-foobar): imswitch-sim
+  [5/14] Select github_repository_url
+    1 - https://github.com/openuc2/imswitch-sim
+    2 - provide later
+    Choose from [1/2] (1): 1
+  [6/14] module_name (imswitch_sim):
+  [7/14] display_name (FooBar Camera): ImSwitch SIM
+  [8/14] short_description (A simple plugin to use a camera from XYZ within ImSwitch): This plugin will organize image acquisition and reconstruction of structured illumination microscopy data.
+  [9/14] include_controller (y):
+  [10/14] include_manager_plugin (y):
+  [11/14] include_widget_plugin (y):
+  [12/14] use_git_tags_for_versioning (n):
+  [13/14] install_precommit (n):
+  [14/14] Select license
+    1 - BSD-3
+    2 - MIT
+    3 - Mozilla Public License 2.0
+    4 - Apache Software License 2.0
+    5 - GNU LGPL v3.0
+    6 - GNU GPL v3.0
+    Choose from [1/2/3/4/5/6] (1): 2
 ```
 
-You just created a minimal napari plugin, complete with tests
-and ready for automatic deployment!
+Then the following message appears:
+
+```
+b"\xe2\x9c\x94 Manifest for 'ImSwitch SIM' valid!"
+Switched to a new branch 'main'
+
+Your plugin template is ready!  Next steps:
+
+1. `cd` into your new directory
+
+     cd imswitch-sim
+     # you probably want to install your new package into your env
+     pip install -e .
+2. Create a github repository with the name 'imswitch-sim':
+   https://github.com/openuc2/imswitch-sim.git
+
+3. Add your newly created github repo as a remote and push:
+
+     git remote add origin https://github.com/openuc2/imswitch-sim.git
+     git push -u origin main
+
+4. The following default URLs have been added to `setup.cfg`:
+
+    Bug Tracker = https://github.com/openuc2/imswitch-sim/issues
+    Documentation = https://github.com/openuc2/imswitch-sim#README.md
+    Source Code = https://github.com/openuc2/imswitch-sim
+    User Support = https://github.com/openuc2/imswitch-sim/issues
+
+    These URLs will be displayed on your plugin's imswitch hub page.
+    You may wish to change these before publishing your plugin!
+5. Read the README for more info: https://github.com/imswitch/cookiecutter-imswitch-plugin
+
+6. We've provided a template description for your plugin page on the imswitch hub at `.imswitch-hub/DESCRIPTION.md`.
+   You'll likely want to edit this before you publish your plugin.
+
+7. Consider customizing the rest of your plugin metadata for display on the imswitch hub:
+   https://github.com/chanzuckerberg/imswitch-hub/blob/main/docs/customizing-plugin-listing.md
+```
+
+You just created a minimal imswitch plugin, complete with tests and ready for automatic deployment!
 
 For more detailed information on each prompt see the [prompts reference](./PROMPTS.md).
 
@@ -104,7 +138,7 @@ git commit -m 'initial commit'
    # here, continuing with the example above...
    # but replace with your own username and repo name
 
-   git remote add origin https://github.com/neuronz52/napari-growth-cone-finder.git
+   git remote add origin https://github.com/openuc2/imswitch-sim.git
    git push -u origin main
    ```
 
@@ -121,7 +155,7 @@ When the tests are done, test coverage will be viewable at
 
 You will need to enable the [codecov](https://github.com/apps/codecov) github app
 for this to work. See [here](https://github.com/apps/codecov/installations/new)
-to install the codecov github app and give it access to your napari plugin repository.
+to install the codecov github app and give it access to your imswitch plugin repository.
 
 ### Set up automatic deployments
 
@@ -172,7 +206,7 @@ and available for pip install with:
 
 ```bash
 # for example
-pip install napari-growth-cone-finder
+pip install imswitch-sim
 ```
 
 ### Running tests locally
@@ -191,7 +225,7 @@ pytest
 ### Create your documentation
 
 Documentation generation is not included in this template.
-We recommend following the getting started guides for one of the following 
+We recommend following the getting started guides for one of the following
 documentation generation tools:
 
 1. [Sphinx]
