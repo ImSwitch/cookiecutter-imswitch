@@ -13,6 +13,8 @@ from .{{cookiecutter.module_name}}_controller import *
 from .{{cookiecutter.module_name}}_widget import *
 {% endif %}{% if cookiecutter.include_manager_plugin == 'y' -%}
 from .{{cookiecutter.module_name}}_manager import *
+{% endif %}{% if cookiecutter.include_info_plugin == 'y' -%}
+from .{{cookiecutter.module_name}}_info import *
 {% endif %}
 __all__ = (
 )

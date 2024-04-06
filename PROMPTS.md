@@ -104,6 +104,14 @@ the code in this file to achieve the dock widget functionality you want. For
 more information on dock widgets see the
 [specification reference][widget-spec].
 
+## include_info_plugin
+
+Choosing `"y"` for this prompt will create an example widget contribution
+inside your plugin's module in the file `_widget.py`. You can then edit
+the code in this file to achieve the dock widget functionality you want. For
+more information on dock widgets see the
+[specification reference][widget-spec].
+
 ## use_git_tags_for_versioning
 
 The default for this prompt is `"n"`. If you choose `"n"` for this prompt, you

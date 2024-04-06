@@ -7,13 +7,6 @@ from typing import Any, Dict, List, Optional, Tuple
 
 
 
-class dotdict(dict):
-    """dot.notation access to dictionary attributes"""
-    __getattr__ = dict.get
-    __setattr__ = dict.__setitem__
-    __delattr__ = dict.__delitem__
-
-
 class {{cookiecutter.module_name}}_controller(ImConWidgetController):
     """Linked to CameraPluginWidget."""
     def __init__(self, *args, **kwargs):

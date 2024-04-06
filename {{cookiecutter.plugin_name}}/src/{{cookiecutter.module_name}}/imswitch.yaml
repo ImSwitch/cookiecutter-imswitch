@@ -31,6 +31,10 @@ contributions:
     - command: {{cookiecutter.plugin_name}}.get_controller
       accepts_directories: false
       filename_patterns: ['*.npy']{% endif %}{% if cookiecutter.include_manager_plugin == 'y' %}
+  info:
+    - command: {{cookiecutter.plugin_name}}.get_info
+      accepts_directories: false
+      filename_patterns: ['*.npy']{% endif %}{% if cookiecutter.include_manager_plugin == 'y' %}
   managers:
     - command: {{cookiecutter.plugin_name}}.write_multiple
       layer_types: ['image*','labels*']

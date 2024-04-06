@@ -10,6 +10,7 @@
     "include_controller": "y",
     "include_manager_plugin": "y",
     "include_widget_plugin": "y",
+    "include_info_plugin": "y",
     "use_git_tags_for_versioning": "n",
     "install_precommit": "n",
     "license": [

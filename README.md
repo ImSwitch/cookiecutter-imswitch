@@ -37,6 +37,7 @@ short_description [A simple plugin to use with napari]:
 # you can select from various plugin template examples
 include_controller [y]:
 include_manager_plugin [y]:
+include_info_plugin [y]:
 include_sample_data_plugin [y]:
 include_dock_widget_plugin [y]:
 use_git_tags_for_versioning [n]:
