@@ -12,22 +12,22 @@ Install [Cookiecutter] and generate a new imswitch plugin project:
 
 ```bash
 pip install cookiecutter
-cookiecutter https://github.com/openUC2/cookiecutter-imswitch/
+cookiecutter https://github.com/imswitch/cookiecutter-imswitch/
 ```
 
 Cookiecutter prompts you for information regarding your plugin
 (A new folder will be created in your current working directory):
 
 ```bash
-(imswitch) (base) MacBook-Pro-43:imswitch-sim bene$ cookiecutter https://github.com/openUC2/cookiecutter-imswitch/
+(imswitch) (base) MacBook-Pro-43:imswitch-sim bene$ cookiecutter https://github.com/imswitch/cookiecutter-imswitch/
 You've downloaded /Users/bene/.cookiecutters/cookiecutter-imswitch before. Is it okay to delete and re-download
 it? [y/n] (y): y
   [1/14] full_name (ImSwitch Developer): Benedict Diederich
   [2/14] email (yourname@example.com): benedict.diederich@leibniz-ipht.de
-  [3/14] github_username_or_organization (githubuser): openuc2
+  [3/14] github_username_or_organization (githubuser): imswitch
   [4/14] plugin_name (imswitch-foobar): imswitch-sim
   [5/14] Select github_repository_url
-    1 - https://github.com/openuc2/imswitch-sim
+    1 - https://github.com/imswitch/imswitch-sim
     2 - provide later
     Choose from [1/2] (1): 1
   [6/14] module_name (imswitch_sim):
@@ -62,19 +62,19 @@ Your plugin template is ready!  Next steps:
      # you probably want to install your new package into your env
      pip install -e .
 2. Create a github repository with the name 'imswitch-sim':
-   https://github.com/openuc2/imswitch-sim.git
+   https://github.com/imswitch/imswitch-sim.git
 
 3. Add your newly created github repo as a remote and push:
 
-     git remote add origin https://github.com/openuc2/imswitch-sim.git
+     git remote add origin https://github.com/imswitch/imswitch-sim.git
      git push -u origin main
 
 4. The following default URLs have been added to `setup.cfg`:
 
-    Bug Tracker = https://github.com/openuc2/imswitch-sim/issues
-    Documentation = https://github.com/openuc2/imswitch-sim#README.md
-    Source Code = https://github.com/openuc2/imswitch-sim
-    User Support = https://github.com/openuc2/imswitch-sim/issues
+    Bug Tracker = https://github.com/imswitch/imswitch-sim/issues
+    Documentation = https://github.com/imswitch/imswitch-sim#README.md
+    Source Code = https://github.com/imswitch/imswitch-sim
+    User Support = https://github.com/imswitch/imswitch-sim/issues
 
     These URLs will be displayed on your plugin's imswitch hub page.
     You may wish to change these before publishing your plugin!
@@ -138,7 +138,7 @@ git commit -m 'initial commit'
    # here, continuing with the example above...
    # but replace with your own username and repo name
 
-   git remote add origin https://github.com/openuc2/imswitch-sim.git
+   git remote add origin https://github.com/imswitch/imswitch-sim.git
    git push -u origin main
    ```
 
