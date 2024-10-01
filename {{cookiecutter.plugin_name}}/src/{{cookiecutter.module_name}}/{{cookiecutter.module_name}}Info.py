@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 
 @dataclass(frozen=True)
-class  {{cookiecutter.module_name}}_info:
+class  {{cookiecutter.module_name}}Info:
     monitorIdx: int
     """ Index of the monitor in the system list of monitors (indexing starts at
     0). """

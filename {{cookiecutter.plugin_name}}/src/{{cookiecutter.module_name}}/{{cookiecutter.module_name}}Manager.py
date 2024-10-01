@@ -4,7 +4,7 @@ from imswitch.imcommon.framework import Signal, SignalInterface
 from imswitch.imcommon.model import initLogger
 
 
-class {{cookiecutter.module_name}}_manager(SignalInterface):
+class {{cookiecutter.module_name}}Manager(SignalInterface):
     sigSIMMaskUpdated = Signal(object)  # (maskCombined)
 
     def __init__(self, pluginInfo, *args, **kwargs):

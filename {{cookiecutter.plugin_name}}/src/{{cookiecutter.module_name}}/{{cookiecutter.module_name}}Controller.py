@@ -7,7 +7,7 @@ from typing import Any, Dict, List, Optional, Tuple
 
 
 
-class {{cookiecutter.module_name}}_controller(ImConWidgetController):
+class {{cookiecutter.module_name}}Controller(ImConWidgetController):
     """Linked to CameraPluginWidget."""
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
