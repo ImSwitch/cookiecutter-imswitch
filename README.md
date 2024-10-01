@@ -1,8 +1,6 @@
 # cookiecutter-napari-plugin
 
-[Cookiecutter] template for authoring ([npe2]-based) [napari] plugins.
-
-**NOTE: This repo is not meant to be cloned/forked directly! Please read "Getting Started" below**
+[Cookiecutter] template for authoring [ImSwitch] plugins.
 
 ## Getting Started
 
@@ -20,8 +18,7 @@ Cookiecutter prompts you for information regarding your plugin
 
 ```bash
 (imswitch) (base) MacBook-Pro-43:imswitch-sim bene$ cookiecutter https://github.com/imswitch/cookiecutter-imswitch/
-You've downloaded /Users/bene/.cookiecutters/cookiecutter-imswitch before. Is it okay to delete and re-download
-it? [y/n] (y): y
+You've downloaded /Users/bene/.cookiecutters/cookiecutter-imswitch before. Is it okay to delete and re-download it? [y/n] (y): y
   [1/14] full_name (ImSwitch Developer): Benedict Diederich
   [2/14] email (yourname@example.com): benedict.diederich@leibniz-ipht.de
   [3/14] github_username_or_organization (githubuser): imswitch
@@ -51,7 +48,7 @@ it? [y/n] (y): y
 Then the following message appears:
 
 ```
-b"\xe2\x9c\x94 Manifest for 'ImSwitch SIM' valid!"
+Manifest for 'ImSwitch SIM' valid!"
 Switched to a new branch 'main'
 
 Your plugin template is ready!  Next steps:
